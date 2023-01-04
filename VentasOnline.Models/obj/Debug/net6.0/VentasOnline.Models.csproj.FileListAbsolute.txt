@@ -1,0 +1,12 @@
+D:\Repositorios\VentasOnline\VentasOnline.Models\bin\Debug\net6.0\VentasOnline.Models.deps.json
+D:\Repositorios\VentasOnline\VentasOnline.Models\bin\Debug\net6.0\VentasOnline.Models.dll
+D:\Repositorios\VentasOnline\VentasOnline.Models\bin\Debug\net6.0\VentasOnline.Models.pdb
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.csproj.AssemblyReference.cache
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.AssemblyInfoInputs.cache
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.AssemblyInfo.cs
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.csproj.CoreCompileInputs.cache
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.dll
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\refint\VentasOnline.Models.dll
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\VentasOnline.Models.pdb
+D:\Repositorios\VentasOnline\VentasOnline.Models\obj\Debug\net6.0\ref\VentasOnline.Models.dll

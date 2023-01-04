@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9BKGM0I3YiAasoaKvMl+S/oXUVMJWztHq3kythkzoAE=",
+  "Source": "VentasOnline-Api",
+  "BasePath": "_content/VentasOnline-Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
