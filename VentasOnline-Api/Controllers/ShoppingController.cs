@@ -1,15 +1,12 @@
 ﻿using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VentasOnline.Models.Dto;
-using VentasOnline_Api.Entities;
 using VentasOnline_Api.Extensions;
 using VentasOnline_Api.Repositories.Contracts;
-using VentasOnline_Api.Repositories.Implementation;
 
 namespace VentasOnline_Api.Controllers
 {
-    [EnableCors("ReglasCors")]
+	[EnableCors("ReglasCors")]
     [Route("api/[controller]")]
 	[ApiController]
 	public class ShoppingController : ControllerBase
@@ -103,6 +100,7 @@ namespace VentasOnline_Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
 		}
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<CartItemDto>> DeleteItem(int id)
         {
@@ -124,6 +122,24 @@ namespace VentasOnline_Api.Controllers
 
                 return Ok(cartItemDto);
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("DeleteCartItem/{cartId:int}")]
+        public async Task<ActionResult> DeleteCartItem(int cartId)
+		{
+			try
+			{
+                var cartItem = await _repoCart.DeleteCartItem(cartId);
+                if (cartItem == false)
+                {
+                    return NotFound();
+                }
+                return Ok(cartItem);
             }
             catch (Exception ex)
             {

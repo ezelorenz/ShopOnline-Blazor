@@ -8,7 +8,9 @@ namespace VentasOnline_Api.Repositories.Contracts
 		Task<CartItem> AddItem(CartItemToAddDto cartItemToAddDto);
 		Task<CartItem>UpdateQuantity (int id, CartItemQtyUpdateDto cartItemQtyUpdateDto);
 		Task<CartItem>DeleteItem(int id);
-		Task<CartItem> GetItem (int id);
+		Task<bool> DeleteCartItem(int cartId);
+
+        Task<CartItem> GetItem (int id);
 		Task<IEnumerable<CartItem>> GetItems(int userId);
 	}
 }

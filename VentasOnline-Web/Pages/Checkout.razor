@@ -1,6 +1,7 @@
 ﻿@page "/Checkout"
 @inherits CheckoutBase
 
+
 <h3>Checkout</h3>
 @if(ShoppingCartItems == null){
 	<DisplaySpinner/>
@@ -29,7 +30,10 @@ else{
 					</tr>
 				</tbody>
 			</table>
-			<button class="btn btn-success">Confirm</button>
+			<button class="btn btn-success"
+			@onclick="Purchase">
+				Confirm
+			</button>
 		}
 		else
 		{

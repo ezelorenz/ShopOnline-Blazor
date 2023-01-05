@@ -86,6 +86,25 @@ namespace VentasOnlineWeb.Services
             }
         }
 
+        public async Task<CartItemDto> DeleteCartItem(int cartId)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"api/Shopping/DeleteCartItem/{cartId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                return default(CartItemDto);
+            }
+            catch (Exception)
+            {
+                //Log exception
+                throw;
+            }
+        }
+
         public async Task<CartItemDto> UpdateQuantity(CartItemQtyUpdateDto cartItemQtyUpdateDto)
         {
             try
@@ -114,5 +133,7 @@ namespace VentasOnlineWeb.Services
                 OnShoppingCartChanged.Invoke(totalQuantity);
             }
         }
+
+        
     }
 }

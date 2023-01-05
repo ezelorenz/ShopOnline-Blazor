@@ -18,7 +18,16 @@ namespace VentasOnline_Api.Repositories.Implementation
 			return await db.CartItems.AnyAsync(c=> c.CartId == cartId && 
 												c.ProductId == productId);
 		}
-		public async Task<CartItem> AddItem(CartItemToAddDto cartItemToAddDto)
+        public async Task<bool>DeleteCartItem(int cartId)
+		{
+
+			db.CartItems.RemoveRange(db.CartItems.Where(x=> x.CartId == cartId));
+
+            await db.SaveChangesAsync();
+            return true;
+
+        }
+        public async Task<CartItem> AddItem(CartItemToAddDto cartItemToAddDto)
 		{
 			if(await CartItemExist(cartItemToAddDto.CartId, cartItemToAddDto.ProductId) == false)
 			{
@@ -82,6 +91,7 @@ namespace VentasOnline_Api.Repositories.Implementation
 			}
 			return item;
 		}
+
 
 		public async Task<CartItem> UpdateQuantity(int id, CartItemQtyUpdateDto cartItemQtyUpdateDto)
 		{

@@ -35,7 +35,7 @@ namespace VentasOnlineWeb.Pages
             CartChanged();
 
         }
-        private CartItemDto GetCartItem(int id)
+        protected CartItemDto GetCartItem(int id)
         {
             return ShoppingCartItems.FirstOrDefault(i => i.Id == id);
         }
