@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VentasOnline_Api.Data;
 
@@ -10,9 +11,11 @@ using VentasOnline_Api.Data;
 namespace VentasOnlineApi.Migrations
 {
     [DbContext(typeof(VentasOnlineDbContext))]
-    partial class VentasOnlineDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230105203235_AddProductCategoryIcons")]
+    partial class AddProductCategoryIcons
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
