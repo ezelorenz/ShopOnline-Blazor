@@ -1,0 +1,39 @@
+﻿@page "/Checkout"
+@inherits CheckoutBase
+
+<h3>Checkout</h3>
+@if(ShoppingCartItems == null){
+	<DisplaySpinner/>
+}
+else{
+	<div class="col-md-6">
+		<h4 class="mb-2">Payment Summary</h4>
+		@if(ShoppingCartItems.Count() > 0){
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach(var item in ShoppingCartItems){
+						<tr>
+							<td>@item.Quantity x @item.ProductName</td>
+							<td>@item.TotalPrice</td>
+						</tr>
+					}
+					<tr>
+						<td><b>Total</b></td>
+						<td><b>@PaymentAmount</b></td>
+					</tr>
+				</tbody>
+			</table>
+			<button class="btn btn-success">Confirm</button>
+		}
+		else
+		{
+			<p>You currently have no items in your shopping cart</p>
+		}
+	</div>
+}
