@@ -825,3 +825,4 @@ D:\Repositorios\VentasOnline\VentasOnline-Web\bin\Debug\net6.0\wwwroot\_framewor
 D:\Repositorios\VentasOnline\VentasOnline-Web\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 D:\Repositorios\VentasOnline\VentasOnline-Web\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Repositorios\VentasOnline\VentasOnline-Web\obj\Debug\net6.0\build-gz\9ObhCSRC.gz
+D:\Repositorios\VentasOnline\VentasOnline-Web\obj\Debug\net6.0\scopedcss\Shared\ProductCategoryNavMenu.razor.rz.scp.css
