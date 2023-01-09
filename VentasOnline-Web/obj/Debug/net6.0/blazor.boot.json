@@ -198,14 +198,14 @@
       "netstandard.dll": "sha256-+SGdnDhVMiZ9hq0EsYwJ+mcK0odf3bAtXnSKLorGDCs=",
       "System.Private.CoreLib.dll": "sha256-mqfalNg3wC8XHlyA+j5ioNcnc0kt4prNudKdyJoaYaU=",
       "VentasOnline.Models.dll": "sha256-6l7RXxyGsnwVmE\/zgAmFcKKtn8RQ8CLUdXuZzs8I6eY=",
-      "VentasOnline-Web.dll": "sha256-IAOxNzJJKMuHRrczBzuEbFTFRaLpOMIwl2NFlGz3zoA="
+      "VentasOnline-Web.dll": "sha256-7IHLPeqCmBMSiNjEVHWp\/395h+wMAOtE2etNMWkFY40="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "VentasOnline.Models.pdb": "sha256-6y+126b9yRQoa1NCeqZAdErZI8qKXi0gJdTyKL7W7G4=",
-      "VentasOnline-Web.pdb": "sha256-tUQvOQp7ML6M3YiPdDOmaiuAlT1S8HZgReCieiWEaKM="
+      "VentasOnline-Web.pdb": "sha256-mRaV7kn3BSTWAdMIn8m57WW8eskQBGzmmDJWT\/X4mIU="
     },
     "runtime": {
       "dotnet.6.0.9.bdj0y2h8z2.js": "sha256-Azk5sbYFVo84h8NpIst9roIPGLH2y8ewQ9SY\/sUHvgs=",

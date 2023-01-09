@@ -31,5 +31,13 @@ namespace VentasOnline_Api.Repositories.Implementation
         {
             return await db.Products.ToListAsync();
         }
+
+        public async Task<IEnumerable<Product>> GetItemsByCategory(int id)
+        {
+            var products = await (from product in db.Products
+                                  where product.CategoryId == id
+                                  select product).ToListAsync();
+            return products;
+        }
     }
 }

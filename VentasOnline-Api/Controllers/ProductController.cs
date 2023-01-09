@@ -43,6 +43,7 @@ namespace VentasOnline_Api.Controllers
             }
         }
 
+
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ProductDto>> GetItem(int id)
         {
@@ -69,6 +70,8 @@ namespace VentasOnline_Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+
         [HttpGet]
         [Route(nameof(GetProductCategories))]
         public async Task<ActionResult<IEnumerable<ProductCategoryDto>>> GetProductCategories()
@@ -79,6 +82,25 @@ namespace VentasOnline_Api.Controllers
                 var productCategoriesDto = productCategories.ConvertToDto();
 
                 return Ok(productCategoriesDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("{categoryId}/GetItemsByCategory")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetItemsByCategory(int categoryId)
+        {
+            try
+            {
+                var products = await _repo.GetItemsByCategory(categoryId);
+                var productCategories = await _repo.GetCategories();
+                var productsDto = products.ConvertToDto(productCategories);
+
+                return Ok(productsDto);
             }
             catch (Exception ex)
             {
