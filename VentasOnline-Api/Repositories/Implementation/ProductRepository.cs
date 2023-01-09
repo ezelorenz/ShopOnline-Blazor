@@ -24,19 +24,22 @@ namespace VentasOnline_Api.Repositories.Implementation
 
         public async Task<Product> GetItem(int id)
         {
-            return await db.Products.FindAsync(id);
+            return await db.Products
+                            .Include(p => p.ProductCategory)
+                            .SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetItems()
         {
-            return await db.Products.ToListAsync();
+            return await db.Products
+                            .Include(p => p.ProductCategory).ToArrayAsync();
         }
 
         public async Task<IEnumerable<Product>> GetItemsByCategory(int id)
         {
-            var products = await (from product in db.Products
-                                  where product.CategoryId == id
-                                  select product).ToListAsync();
+            var products = await db.Products
+                            .Include(p => p.ProductCategory)
+                            .Where(p => p.CategoryId == id).ToListAsync();
             return products;
         }
     }

@@ -17,12 +17,9 @@ namespace VentasOnline_Api.Extensions
                     }).ToList();
         }
 
-        public static IEnumerable<ProductDto> ConvertToDto(this IEnumerable<Product> products,
-                                                           IEnumerable<ProductCategory> productCategories)
+        public static IEnumerable<ProductDto> ConvertToDto(this IEnumerable<Product> products)
         {
             return (from p in products
-                    join pc in productCategories
-                    on p.CategoryId equals pc.Id
                     select new ProductDto
                     {
                         Id = p.Id,
@@ -31,12 +28,12 @@ namespace VentasOnline_Api.Extensions
                         ImageURL = p.ImageURL,
                         Price = p.Price,
                         Quantity = p.Quantity,
-                        CategoryId = p.CategoryId,
-                        CategoryName = pc.Name
+                        CategoryId = p.ProductCategory.Id,
+                        CategoryName = p.ProductCategory.Name
                     }).ToList();
         }
 
-        public static ProductDto ConvertToDto(this Product p, ProductCategory pc)
+        public static ProductDto ConvertToDto(this Product p)
         {
             return  new ProductDto
                     {
@@ -46,8 +43,8 @@ namespace VentasOnline_Api.Extensions
                 ImageURL = p.ImageURL,
                 Price = p.Price,
                 Quantity = p.Quantity,
-                CategoryId = p.CategoryId,
-                CategoryName = pc.Name
+                CategoryId = p.ProductCategory.Id,
+                CategoryName = p.ProductCategory.Name
             };
         }
 

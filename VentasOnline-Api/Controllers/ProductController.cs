@@ -24,15 +24,14 @@ namespace VentasOnline_Api.Controllers
             try
             {
                 var products = await _repo.GetItems();
-                var productsCategories = await _repo.GetCategories();
 
-                if (products == null || productsCategories == null)
+                if (products == null)
                 {
                     return NotFound();
                 }
                 else
                 {
-                    var productDtos = products.ConvertToDto(productsCategories);
+                    var productDtos = products.ConvertToDto();
                     return Ok(productDtos);
                 }
 
@@ -58,9 +57,7 @@ namespace VentasOnline_Api.Controllers
                 }
                 else
                 {
-                    var productCategory = await _repo.GetCategory(product.CategoryId);
-
-                    var productDto = product.ConvertToDto(productCategory);
+                    var productDto = product.ConvertToDto();
                     return Ok(productDto);
                 }
 
@@ -97,8 +94,7 @@ namespace VentasOnline_Api.Controllers
             try
             {
                 var products = await _repo.GetItemsByCategory(categoryId);
-                var productCategories = await _repo.GetCategories();
-                var productsDto = products.ConvertToDto(productCategories);
+                var productsDto = products.ConvertToDto();
 
                 return Ok(productsDto);
             }

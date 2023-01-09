@@ -1,4 +1,6 @@
-﻿namespace VentasOnline_Api.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace VentasOnline_Api.Entities
 {
     public class Product
     {
@@ -10,5 +12,7 @@
         public int Quantity { get; set; }
         public int CategoryId { get; set; }
 
+        [ForeignKey("CategoryId")]
+        public ProductCategory ProductCategory { get; set; }
     }
 }
